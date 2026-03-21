@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
@@ -27,30 +28,45 @@ export default function BlogIndexPage() {
             Mobile craft, UX, and what&apos;s next.
           </p>
         </header>
-        <ul className="mt-12 space-y-6">
+        <ul className="mt-12 space-y-8">
           {blogPosts.map((post) => (
             <li key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent p-6 transition hover:border-purple-400/35 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]"
+                className="group block overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-transparent transition hover:border-purple-400/35 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]"
               >
-                <p className="text-xs uppercase tracking-[0.2em] text-purple-300/90">
-                  {post.category} ·{" "}
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </p>
-                <h2 className="mt-3 text-balance text-xl font-semibold leading-snug text-white transition group-hover:text-purple-100">
-                  {post.title}
-                </h2>
-                <p className="mt-3 text-[15px] leading-[1.65] text-zinc-400">
-                  {post.excerpt}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-purple-300 transition group-hover:text-purple-200">
-                  Read →
-                </span>
+                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.coverAlt}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 48rem"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+                    aria-hidden
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-purple-300/90">
+                    {post.category} ·{" "}
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </p>
+                  <h2 className="mt-3 text-balance text-xl font-semibold leading-snug text-white transition group-hover:text-purple-100">
+                    {post.title}
+                  </h2>
+                  <p className="mt-3 text-[15px] leading-[1.65] text-zinc-400">
+                    {post.excerpt}
+                  </p>
+                  <span className="mt-4 inline-block text-sm font-medium text-purple-300 transition group-hover:text-purple-200">
+                    Read →
+                  </span>
+                </div>
               </Link>
             </li>
           ))}

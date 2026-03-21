@@ -9,6 +9,9 @@ export type BlogPost = {
   excerpt: string;
   date: string;
   category: string;
+  /** Cover photo (header + cards). Use a stable HTTPS URL (e.g. Unsplash). */
+  coverImage: string;
+  coverAlt: string;
   /** Opening paragraphs (shown before optional subsections). */
   paragraphs: string[];
   /** Optional grouped sections with headings — improves scanability. */
@@ -23,6 +26,9 @@ export const blogPosts: BlogPost[] = [
       "Benchmarks lie. Users decide in the first 200ms whether your mobile app feels premium or abandoned. Here's what actually registers as \"fast\" on a phone.",
     date: "2026-03-18",
     category: "Mobile",
+    coverImage:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1600&q=85&auto=format&fit=crop",
+    coverAlt: "Hands holding a smartphone with a colorful app screen",
     paragraphs: [
       "We obsess over cold start times and frame averages, but nobody walks away saying \"that app scored 58fps on a spreadsheet.\" They walk away with a feeling: either the interface answers the moment your thumb expects it, or something is off — even when the numbers say you're fine.",
     ],
@@ -49,6 +55,9 @@ export const blogPosts: BlogPost[] = [
       "Full-screen walkthroughs aren't education; they're a tax on curiosity. A tighter UX pattern is to let people fail in place — with guardrails — instead of front-loading every rule.",
     date: "2026-03-10",
     category: "UX",
+    coverImage:
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1600&q=85&auto=format&fit=crop",
+    coverAlt: "UX sketches and interface wireframes on paper",
     paragraphs: [
       "The best mobile UX doesn't celebrate how much you taught; it celebrates how little you had to. Users aren't stupid — they're busy. When the first screen is a carousel of features they haven't earned context for yet, you're not onboarding them; you're delaying their first success.",
     ],
@@ -76,6 +85,9 @@ export const blogPosts: BlogPost[] = [
       "Autonomous loops are in the repo now: codegen, tests, triage, even release notes. The shift isn't \"fewer developers\" — it's a different split between taste and throughput.",
     date: "2026-03-02",
     category: "Future",
+    coverImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=85&auto=format&fit=crop",
+    coverAlt: "Abstract AI neural network visualization with glowing nodes",
     paragraphs: [
       "For mobile, \"AI\" stopped being a chat window in the corner. Agents — systems that plan, act, and retry inside guardrails — are now part of the delivery pipeline: scaffolding screens, generating snapshot tests, chasing flaky UI tests, drafting copy for empty states, and proposing diffs when crash spikes cluster.",
       "That changes the job. The bottleneck used to be typing; now it's judgment about what should exist at all.",

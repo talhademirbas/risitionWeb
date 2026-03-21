@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -16,6 +17,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | Risition`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      images: [{ url: post.coverImage, alt: post.coverAlt, width: 1600, height: 800 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage],
+    },
   };
 }
 
@@ -34,6 +47,22 @@ export default async function BlogPostPage({ params }: Props) {
         >
           ← Blog
         </Link>
+
+        <div className="relative mt-8 aspect-[2/1] w-full overflow-hidden rounded-2xl ring-1 ring-white/15">
+          <Image
+            src={post.coverImage}
+            alt={post.coverAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 42rem"
+            priority
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+            aria-hidden
+          />
+        </div>
+
         <header className="mt-10">
           <p className="text-xs uppercase tracking-[0.2em] text-purple-300/90">
             {post.category} ·{" "}

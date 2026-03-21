@@ -169,20 +169,35 @@ export default function Home() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-6 transition hover:border-purple-400/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent transition hover:border-purple-400/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]"
               >
-                <p className="text-xs uppercase tracking-[0.18em] text-purple-300/90">
-                  {post.category}
-                </p>
-                <h3 className="mt-3 text-balance text-lg font-semibold leading-snug text-white transition group-hover:text-purple-100">
-                  {post.title}
-                </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-[1.65] text-zinc-500 line-clamp-4">
-                  {post.excerpt}
-                </p>
-                <span className="mt-4 text-sm font-medium text-purple-400 transition group-hover:text-purple-300">
-                  Read article →
-                </span>
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.coverAlt}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                    aria-hidden
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="text-xs uppercase tracking-[0.18em] text-purple-300/90">
+                    {post.category}
+                  </p>
+                  <h3 className="mt-2 text-balance text-lg font-semibold leading-snug text-white transition group-hover:text-purple-100">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[14px] leading-[1.6] text-zinc-500 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <span className="mt-3 text-sm font-medium text-purple-400 transition group-hover:text-purple-300">
+                    Read article →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
