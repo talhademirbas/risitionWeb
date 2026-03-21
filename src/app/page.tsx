@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
@@ -14,6 +15,40 @@ const reveal: Variants = {
 };
 
 export default function Home() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      const data = (await res.json()) as { error?: string };
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.error ?? "Something went wrong.");
+        return;
+      }
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Please try again.");
+    }
+  }
+
   return (
     <main className="relative overflow-hidden bg-black text-white">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(167,139,250,0.2),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(109,40,217,0.14),transparent_30%),radial-gradient(circle_at_50%_90%,rgba(147,51,234,0.1),transparent_45%)]" />
@@ -96,27 +131,58 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-zinc-300">
             Questions or ideas? Drop a note — we read everything.
           </p>
-          <form className="mt-8 grid gap-4 sm:grid-cols-2">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-8 grid gap-4 sm:grid-cols-2"
+          >
             <input
               type="text"
+              name="name"
+              autoComplete="name"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              disabled={status === "loading"}
               placeholder="Name"
-              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2"
+              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2 disabled:opacity-50"
             />
             <input
               type="email"
+              name="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "loading"}
               placeholder="Email"
-              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2"
+              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2 disabled:opacity-50"
             />
             <textarea
+              name="message"
               rows={4}
+              required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              disabled={status === "loading"}
               placeholder="Your message"
-              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2 sm:col-span-2"
+              className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 outline-none ring-purple-300/70 transition placeholder:text-zinc-500 focus:border-purple-300/40 focus:ring-2 disabled:opacity-50 sm:col-span-2"
             />
+            {status === "error" && errorMessage && (
+              <p className="text-sm text-red-400 sm:col-span-2" role="alert">
+                {errorMessage}
+              </p>
+            )}
+            {status === "success" && (
+              <p className="text-sm text-emerald-400 sm:col-span-2" role="status">
+                Thanks — your message was sent.
+              </p>
+            )}
             <button
-              type="button"
-              className="sm:col-span-2 rounded-xl bg-purple-500 px-6 py-3 font-medium shadow-[0_0_30px_rgba(168,85,247,0.45)] transition hover:bg-purple-400"
+              type="submit"
+              disabled={status === "loading"}
+              className="sm:col-span-2 rounded-xl bg-purple-500 px-6 py-3 font-medium shadow-[0_0_30px_rgba(168,85,247,0.45)] transition hover:bg-purple-400 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Inquiry
+              {status === "loading" ? "Sending…" : "Send Inquiry"}
             </button>
           </form>
         </motion.section>

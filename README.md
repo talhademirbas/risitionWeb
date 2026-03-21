@@ -18,6 +18,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Contact form (email)
+
+Messages go to **talhaademirbas@gmail.com** by default. The form uses [Resend](https://resend.com).
+
+1. Copy `.env.example` to `.env.local`.
+2. Add `RESEND_API_KEY` from the Resend dashboard.
+3. For local testing, Resend’s default sender `onboarding@resend.dev` can send to your Resend account email; for production, add a domain in Resend and set `RESEND_FROM_EMAIL` (e.g. `Risition <hello@yourdomain.com>`).
+
+On Vercel: **Project → Settings → Environment Variables** — add `RESEND_API_KEY` (and optional `CONTACT_TO_EMAIL`, `RESEND_FROM_EMAIL`).
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
