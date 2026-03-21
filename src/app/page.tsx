@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { blogPosts } from "@/content/blog";
 
 const reveal: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -65,6 +66,9 @@ export default function Home() {
           <nav className="hidden items-center gap-6 text-sm text-zinc-300 sm:flex">
             <a href="#apps" className="transition hover:text-purple-200">
               Apps
+            </a>
+            <a href="#blog" className="transition hover:text-purple-200">
+              Blog
             </a>
             <a href="#contact" className="transition hover:text-purple-200">
               Contact
@@ -136,6 +140,52 @@ export default function Home() {
               </div>
             </div>
           </Link>
+        </motion.section>
+
+        <motion.section
+          id="blog"
+          variants={reveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          className="space-y-8 py-14"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="text-3xl font-semibold">Blog</h2>
+              <p className="mt-2 max-w-xl text-zinc-400">
+                Hot takes on mobile craft — not checklist filler.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-purple-300 transition hover:text-purple-200"
+            >
+              All posts →
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group flex flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-6 transition hover:border-purple-400/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]"
+              >
+                <p className="text-xs uppercase tracking-[0.18em] text-purple-300/90">
+                  {post.category}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold leading-snug text-white transition group-hover:text-purple-100">
+                  {post.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500 line-clamp-4">
+                  {post.excerpt}
+                </p>
+                <span className="mt-4 text-sm font-medium text-purple-400 transition group-hover:text-purple-300">
+                  Read article →
+                </span>
+              </Link>
+            ))}
+          </div>
         </motion.section>
 
         <motion.section
