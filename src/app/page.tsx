@@ -130,10 +130,8 @@ export default function Home() {
                   Align: Daily Tasks
                 </h3>
                 <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
-                  Organize, track, and complete your daily tasks effortlessly with
-                  Align. Designed for individuals who want to boost productivity,
-                  Align combines a clean, intuitive interface with AI-powered smart
-                  features to make task management faster and more motivating.
+                  Everyday AI companion for planning, prioritizing, and finishing
+                  what matters.
                 </p>
               </div>
             </div>
