@@ -69,19 +69,19 @@ export default function AlignPage() {
             aria-label="Align app legal"
             className="flex items-center justify-center gap-6 sm:justify-end"
           >
-            <Link
-              href="/terms"
-              className="text-sm text-zinc-500 transition hover:text-purple-200"
-            >
-              Terms
-            </Link>
-            <span className="h-3 w-px bg-zinc-800" aria-hidden />
-            <Link
-              href="/privacy"
-              className="text-sm text-zinc-500 transition hover:text-purple-200"
-            >
-              Privacy
-            </Link>
+              <Link
+                href="/align/terms"
+                className="text-sm text-zinc-500 transition hover:text-purple-200"
+              >
+                Terms
+              </Link>
+              <span className="h-3 w-px bg-zinc-800" aria-hidden />
+              <Link
+                href="/align/privacy"
+                className="text-sm text-zinc-500 transition hover:text-purple-200"
+              >
+                Privacy
+              </Link>
           </nav>
         </div>
       </footer>
