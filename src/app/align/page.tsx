@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -26,12 +27,28 @@ export default function AlignPage() {
           </span>
         </header>
 
-        <p className="text-sm tracking-[0.28em] text-purple-300/90">
-          AI + Productivity App
-        </p>
-        <h1 className="mt-3 bg-gradient-to-r from-white via-white to-purple-200/90 bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
-          Align
-        </h1>
+        <div className="mt-2 flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
+          <div className="flex shrink-0 justify-center sm:justify-start">
+            <div className="rounded-2xl bg-white p-5 shadow-[0_0_48px_rgba(168,85,247,0.22)] ring-1 ring-white/15">
+              <Image
+                src="/align-icon.png"
+                alt="Align app icon: task list with checkmark"
+                width={120}
+                height={120}
+                className="h-[7.5rem] w-[7.5rem] object-contain sm:h-32 sm:w-32"
+                priority
+              />
+            </div>
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm tracking-[0.28em] text-purple-300/90">
+              AI + Productivity App
+            </p>
+            <h1 className="mt-3 bg-gradient-to-r from-white via-white to-purple-200/90 bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
+              Align
+            </h1>
+          </div>
+        </div>
         <p className="mt-6 text-lg leading-relaxed text-zinc-300">
           Align helps you plan your day, pick what matters, and stay in flow.
           Built as a calm, everyday companion—not another noisy dashboard.

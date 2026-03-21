@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
@@ -108,14 +109,30 @@ export default function Home() {
             <div className="absolute right-4 top-4 rounded-full border border-amber-400/35 bg-amber-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-amber-200">
               Under construction
             </div>
-            <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
-              AI + Productivity App
-            </p>
-            <h3 className="mt-4 text-3xl font-semibold sm:text-4xl">Align</h3>
-            <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
-              A fresh, everyday AI companion for planning, prioritizing, and
-              finishing what matters.
-            </p>
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
+              <div className="flex shrink-0 justify-center sm:justify-start">
+                <div className="rounded-2xl bg-white p-4 shadow-[0_0_40px_rgba(168,85,247,0.2)] ring-1 ring-white/20 transition group-hover:ring-purple-400/30">
+                  <Image
+                    src="/align-icon.png"
+                    alt="Align app icon: task list with checkmark"
+                    width={104}
+                    height={104}
+                    className="h-[5.5rem] w-[5.5rem] object-contain sm:h-28 sm:w-28"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
+                  AI + Productivity App
+                </p>
+                <h3 className="mt-4 text-3xl font-semibold sm:text-4xl">Align</h3>
+                <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
+                  A fresh, everyday AI companion for planning, prioritizing, and
+                  finishing what matters.
+                </p>
+              </div>
+            </div>
           </Link>
         </motion.section>
 
