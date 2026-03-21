@@ -174,10 +174,10 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.18em] text-purple-300/90">
                   {post.category}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold leading-snug text-white transition group-hover:text-purple-100">
+                <h3 className="mt-3 text-balance text-lg font-semibold leading-snug text-white transition group-hover:text-purple-100">
                   {post.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500 line-clamp-4">
+                <p className="mt-2 flex-1 text-[15px] leading-[1.65] text-zinc-500 line-clamp-4">
                   {post.excerpt}
                 </p>
                 <span className="mt-4 text-sm font-medium text-purple-400 transition group-hover:text-purple-300">

@@ -42,10 +42,10 @@ export default function BlogIndexPage() {
                     year: "numeric",
                   })}
                 </p>
-                <h2 className="mt-2 text-xl font-semibold text-white transition group-hover:text-purple-100">
+                <h2 className="mt-3 text-balance text-xl font-semibold leading-snug text-white transition group-hover:text-purple-100">
                   {post.title}
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-3 text-[15px] leading-[1.65] text-zinc-400">
                   {post.excerpt}
                 </p>
                 <span className="mt-4 inline-block text-sm font-medium text-purple-300 transition group-hover:text-purple-200">
