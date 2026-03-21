@@ -114,7 +114,7 @@ export default function Home() {
                 <div className="rounded-2xl bg-white p-4 shadow-[0_0_40px_rgba(168,85,247,0.2)] ring-1 ring-white/20 transition group-hover:ring-purple-400/30">
                   <Image
                     src="/align-icon.png"
-                    alt="Align app icon: task list with checkmark"
+                    alt="Align: Daily Tasks app icon"
                     width={104}
                     height={104}
                     className="h-[5.5rem] w-[5.5rem] object-contain sm:h-28 sm:w-28"
@@ -126,10 +126,14 @@ export default function Home() {
                 <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
                   AI + Productivity App
                 </p>
-                <h3 className="mt-4 text-3xl font-semibold sm:text-4xl">Align</h3>
+                <h3 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl md:text-4xl">
+                  Align: Daily Tasks
+                </h3>
                 <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
-                  A fresh, everyday AI companion for planning, prioritizing, and
-                  finishing what matters.
+                  Organize, track, and complete your daily tasks effortlessly with
+                  Align. Designed for individuals who want to boost productivity,
+                  Align combines a clean, intuitive interface with AI-powered smart
+                  features to make task management faster and more motivating.
                 </p>
               </div>
             </div>
