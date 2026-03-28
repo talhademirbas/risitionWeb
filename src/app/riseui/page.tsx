@@ -22,13 +22,16 @@ export default function RiseUIPage() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_30%)]" />
 
       <div className="mx-auto w-full max-w-3xl flex-1 px-6 pb-16 pt-8 sm:px-10">
-        <header className="mb-12">
+        <header className="mb-12 flex items-center justify-between">
           <Link
             href="/"
             className="text-sm text-zinc-500 transition hover:text-purple-200"
           >
             ← Risition
           </Link>
+          <span className="rounded-full border border-amber-400/30 bg-amber-500/[0.08] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-amber-200/90">
+            Under construction
+          </span>
         </header>
 
         <p className="text-sm tracking-[0.28em] text-purple-300/90">FLUTTER UI LIBRARY</p>

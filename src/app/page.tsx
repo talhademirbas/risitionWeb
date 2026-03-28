@@ -156,8 +156,11 @@ export default function Home() {
           <h2 className="text-3xl font-semibold">RiseUI</h2>
           <Link
             href="/riseui"
-            className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-8 shadow-[0_0_50px_rgba(168,85,247,0.12)] outline-none transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/45 hover:shadow-[0_0_60px_rgba(168,85,247,0.2)] focus-visible:ring-2 focus-visible:ring-purple-400/60"
+            className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-8 pt-16 shadow-[0_0_50px_rgba(168,85,247,0.12)] outline-none transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/45 hover:shadow-[0_0_60px_rgba(168,85,247,0.2)] focus-visible:ring-2 focus-visible:ring-purple-400/60 sm:pt-8 sm:pr-44"
           >
+            <div className="absolute right-4 top-4 rounded-full border border-amber-400/35 bg-amber-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-amber-200">
+              Under construction
+            </div>
             <div className="pointer-events-none absolute -right-12 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl transition group-hover:bg-cyan-400/15" />
             <div className="pointer-events-none absolute -bottom-8 left-1/4 h-32 w-32 rounded-full bg-purple-500/15 blur-2xl" />
             <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
