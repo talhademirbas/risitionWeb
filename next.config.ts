@@ -1,20 +1,9 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import type { NextConfig } from "next";
-import { createMDX } from "fumadocs-mdx/next";
-
-const configDir = path.dirname(fileURLToPath(import.meta.url));
-/** Parent of risitionWeb + riseUI (e.g. …/projects) for monorepo resolution */
-const workspaceRoot = path.join(configDir, "..");
-
-const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: workspaceRoot,
+    root: __dirname,
   },
-  transpilePackages: ["@rise-ui/docs", "fumadocs-ui", "fumadocs-core", "fumadocs-mdx"],
   images: {
     remotePatterns: [
       {
@@ -37,4 +26,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
