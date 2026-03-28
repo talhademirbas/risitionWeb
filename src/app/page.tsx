@@ -67,6 +67,9 @@ export default function Home() {
             <a href="#apps" className="transition hover:text-purple-200">
               Apps
             </a>
+            <a href="#riseui" className="transition hover:text-purple-200">
+              RiseUI
+            </a>
             <a href="#blog" className="transition hover:text-purple-200">
               Blog
             </a>
@@ -137,6 +140,46 @@ export default function Home() {
                   Everyday AI companion for planning, prioritizing, and finishing
                   what matters.
                 </p>
+              </div>
+            </div>
+          </Link>
+        </motion.section>
+
+        <motion.section
+          id="riseui"
+          variants={reveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          className="space-y-8 py-14"
+        >
+          <h2 className="text-3xl font-semibold">RiseUI</h2>
+          <Link
+            href="/riseui"
+            className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-8 shadow-[0_0_50px_rgba(168,85,247,0.12)] outline-none transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/45 hover:shadow-[0_0_60px_rgba(168,85,247,0.2)] focus-visible:ring-2 focus-visible:ring-purple-400/60"
+          >
+            <div className="pointer-events-none absolute -right-12 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl transition group-hover:bg-cyan-400/15" />
+            <div className="pointer-events-none absolute -bottom-8 left-1/4 h-32 w-32 rounded-full bg-purple-500/15 blur-2xl" />
+            <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
+                  Flutter UI library
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl">
+                  Opinionated components for Material apps
+                </h3>
+                <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
+                  Variants, sizes, and smooth states — minimal API, native widgets,
+                  documented with Dart examples.
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+                <span className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-medium uppercase tracking-wider text-zinc-400">
+                  rise_ui
+                </span>
+                <span className="text-sm font-medium text-purple-300 transition group-hover:text-purple-200">
+                  Learn more →
+                </span>
               </div>
             </div>
           </Link>
