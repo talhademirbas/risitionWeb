@@ -28,6 +28,14 @@ Messages go to **talhaademirbas@gmail.com** by default. The form uses [Resend](h
 
 On Vercel: **Project → Settings → Environment Variables** — add `RESEND_API_KEY` (and optional `CONTACT_TO_EMAIL`, `RESEND_FROM_EMAIL`).
 
+### RiseUI docs — `https://www.risition.com/riseui/docs/`
+
+Visitors only ever see **`/riseui/docs/`** on this domain (no `/apps` in the path). The docs Next app is built from the **public** `riseUI` GitHub repo; Vercel’s “Root Directory” may be `apps/docs` inside that repo — that is **not** part of the public URL.
+
+1. Deploy the docs as its own Vercel project from `riseUI`. Copy the deployment URL including `/riseui/docs`, e.g. `https://<riseui-docs>.vercel.app/riseui/docs`.
+2. On **this** project, set **`RISEUI_DOCS_URL`** to that value (see `.env.example`).
+3. Redeploy **risitionWeb** once after setting or changing the variable. After that, **pushing `riseUI` updates the live docs** without redeploying this site for content-only changes.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
