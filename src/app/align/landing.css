@@ -65,6 +65,8 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .align-landing .hero-top .sub {
@@ -358,6 +360,31 @@
 
 .align-landing .card li:first-of-type {
   padding-top: 0;
+}
+
+.align-landing .faq dl {
+  margin: 0;
+}
+
+.align-landing .faq-item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.align-landing .faq-item:first-child {
+  padding-top: 0;
+}
+
+.align-landing .faq-item dt {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.align-landing .faq-item dd {
+  margin: 0;
+  color: #1d1d1f;
+  max-width: 40em;
 }
 
 .align-landing .page-foot {

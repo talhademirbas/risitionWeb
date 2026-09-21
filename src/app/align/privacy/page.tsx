@@ -6,6 +6,7 @@ const CONTACT_EMAIL = "apphitectbusiness@gmail.com";
 export const metadata: Metadata = {
   title: "Align — Privacy Policy",
   description: "Privacy Policy for Align: Daily Planner & To Do List.",
+  alternates: { canonical: "/align/privacy" },
 };
 
 export default function PrivacyPage() {

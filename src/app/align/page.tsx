@@ -1,24 +1,154 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  ALIGN_APP_ID,
+  ALIGN_DESCRIPTION,
+  ALIGN_NAME,
+  ALIGN_PATH,
+  ALIGN_STORE_URL,
+  ALIGN_URL,
+  SITE_URL,
+} from "@/lib/site";
 import "./landing.css";
 
-const STORE_URL =
-  "https://apps.apple.com/us/app/align-ai-planner-to-do-list/id6758886076";
+const faqs = [
+  {
+    question: "What is Align?",
+    answer:
+      "Align is a daily planner and to-do list by Risition. You speak or type what you need to do, put tasks on a clock, and work from a list you can actually finish.",
+  },
+  {
+    question: "Is Align a daily planner or a to-do list?",
+    answer:
+      "Both. Align is a daily planner with a to-do list at the centre: plan today, timebox tasks, get reminders, and check them off as you go.",
+  },
+  {
+    question: "Who is Align for?",
+    answer:
+      "People who put things off, forget tasks, feel scattered, or just want daily tasks to feel easier. It is not a full calendar, team app, or heavy productivity system.",
+  },
+  {
+    question: "Where can I get the Align daily planner?",
+    answer:
+      "Align is on the App Store for iPhone and iPad. Download Align: Daily Planner & To Do List, made by Risition.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Align: Daily Planner & To Do List",
-  description:
-    "Planning your day should be simple, not overwhelming. Align helps you organise your tasks without the clutter.",
+  description: ALIGN_DESCRIPTION,
+  keywords: [
+    "Align daily planner",
+    "Align to do list",
+    "daily planner iPhone",
+    "to do list iPad",
+    "Risition",
+    "timebox tasks",
+  ],
+  alternates: { canonical: ALIGN_PATH },
+  itunes: {
+    appId: ALIGN_APP_ID,
+    appArgument: ALIGN_URL,
+  },
   openGraph: {
-    title: "Align: Daily Planner & To Do List",
-    description:
-      "From overwhelmed to organised. Speak or type your tasks, put them on the clock, and get through your day.",
-    url: "/align",
+    title: ALIGN_NAME,
+    description: ALIGN_DESCRIPTION,
+    url: ALIGN_PATH,
     siteName: "Risition",
     type: "website",
-    images: [{ url: "/align/appicon.png" }],
+    locale: "en_US",
+    images: [
+      {
+        url: "/align/appicon.png",
+        alt: "Align daily planner app icon",
+        width: 1024,
+        height: 1024,
+      },
+    ],
   },
+  twitter: {
+    card: "summary",
+    title: ALIGN_NAME,
+    description: ALIGN_DESCRIPTION,
+    images: ["/align/appicon.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: ALIGN_NAME,
+      alternateName: ["Align", "Align daily planner"],
+      applicationCategory: "ProductivityApplication",
+      operatingSystem: "iOS, iPadOS",
+      url: ALIGN_URL,
+      downloadUrl: ALIGN_STORE_URL,
+      installUrl: ALIGN_STORE_URL,
+      image: `${SITE_URL}/align/appicon.png`,
+      screenshot: [
+        `${SITE_URL}/align/ss-todo.png`,
+        `${SITE_URL}/align/ss-speak.png`,
+        `${SITE_URL}/align/ss-timebox.png`,
+        `${SITE_URL}/align/ss-progress.png`,
+      ],
+      description: ALIGN_DESCRIPTION,
+      author: {
+        "@type": "Organization",
+        name: "Risition",
+        url: SITE_URL,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Risition",
+        url: SITE_URL,
+      },
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        url: ALIGN_STORE_URL,
+      },
+    },
+    {
+      "@type": "WebPage",
+      name: ALIGN_NAME,
+      url: ALIGN_URL,
+      description: ALIGN_DESCRIPTION,
+      isPartOf: { "@type": "WebSite", name: "Risition", url: SITE_URL },
+      about: { "@type": "SoftwareApplication", name: ALIGN_NAME },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Risition",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: ALIGN_NAME,
+          item: ALIGN_URL,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
 };
 
 function AppleMark() {
@@ -37,7 +167,7 @@ function AppleMark() {
 
 function StoreCta({ className }: { className?: string }) {
   return (
-    <a className={className} href={STORE_URL}>
+    <a className={className} href={ALIGN_STORE_URL}>
       <AppleMark />
       View on the App Store
     </a>
@@ -47,26 +177,31 @@ function StoreCta({ className }: { className?: string }) {
 export default function AlignPage() {
   return (
     <main className="align-landing">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="hero">
         <div className="hero-inner">
           <div className="hero-top">
             <Image
               src="/align/appicon.png"
-              alt="Align"
+              alt="Align daily planner app icon"
               width={48}
               height={48}
               priority
             />
             <div>
-              <p className="name">Align: Daily Planner &amp; To Do List</p>
-              <p className="sub">Daily Task Manager</p>
+              <h1 className="name">{ALIGN_NAME}</h1>
+              <p className="sub">Daily planner by Risition</p>
             </div>
           </div>
           <div className="hero-main">
-            <h1 className="hero-promise">From overwhelmed to organised.</h1>
+            <p className="hero-promise">From overwhelmed to organised.</p>
             <p className="hero-lede">
-              Planning your day should be simple, not overwhelming. Align helps
-              you organise your tasks without the clutter.
+              Align is a daily planner and to-do list for iPhone and iPad.
+              Planning your day should be simple, not overwhelming. Speak or
+              type your tasks, put them on the clock, and get through your day.
             </p>
             <StoreCta className="cta" />
           </div>
@@ -74,10 +209,13 @@ export default function AlignPage() {
         <div className="hero-shots">
           <p className="platforms">iPhone, iPad</p>
           <div className="shots">
-            <img src="/align/ss-todo.png" alt="Daily Planning Made Easy" />
-            <img src="/align/ss-speak.png" alt="Speak to save your tasks" />
-            <img src="/align/ss-timebox.png" alt="Your day, on a clock" />
-            <img src="/align/ss-progress.png" alt="See yourself moving forward" />
+            <img src="/align/ss-todo.png" alt="Align daily planner to-do list" />
+            <img src="/align/ss-speak.png" alt="Speak to save tasks in Align" />
+            <img src="/align/ss-timebox.png" alt="Timebox your day on a clock" />
+            <img
+              src="/align/ss-progress.png"
+              alt="Align weekly progress and streaks"
+            />
           </div>
         </div>
       </div>
@@ -132,7 +270,7 @@ export default function AlignPage() {
         </section>
 
         <section>
-          <h2>What you can do</h2>
+          <h2>What you can do in this daily planner</h2>
           <ul className="features">
             <li>
               <strong>Quick Capture</strong> — speak what you need to do (and
@@ -171,8 +309,8 @@ export default function AlignPage() {
             on and what to do next.
           </p>
           <p>
-            No complicated productivity system. Just a simple way to turn
-            scattered tasks into a clear plan.
+            No complicated productivity system. Just a simple daily planner that
+            turns scattered tasks into a clear plan.
           </p>
         </section>
 
@@ -203,17 +341,33 @@ export default function AlignPage() {
               </ul>
             </div>
           </div>
+        </section>
+
+        <section className="faq">
+          <h2>Questions about Align</h2>
+          <dl>
+            {faqs.map((faq) => (
+              <div key={faq.question} className="faq-item">
+                <dt>{faq.question}</dt>
+                <dd>{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
           <div className="close">
             <StoreCta className="cta cta-dark" />
           </div>
         </section>
 
         <footer className="page-foot">
-          <p>© Talha Demirbaş. Align: Daily Planner &amp; To Do List.</p>
+          <p>
+            © Talha Demirbaş. {ALIGN_NAME}.{" "}
+            <Link href="/">Risition</Link>
+          </p>
           <div className="links">
-            <a href={STORE_URL}>App Store</a>
+            <a href={ALIGN_STORE_URL}>App Store</a>
             <Link href="/align/privacy">Privacy Policy</Link>
             <Link href="/align/terms">Terms</Link>
+            <Link href="/blog">Blog</Link>
           </div>
         </footer>
       </div>

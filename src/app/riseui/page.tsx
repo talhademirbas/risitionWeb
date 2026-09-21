@@ -4,9 +4,10 @@ import type { Metadata } from "next";
 const DOCS_URL = "https://www.risition.com/riseui/docs";
 
 export const metadata: Metadata = {
-  title: "RiseUI | Risition",
+  title: "RiseUI",
   description:
     "RiseUI is a Flutter UI library — opinionated defaults, composition, and native Material widgets.",
+  alternates: { canonical: "/riseui" },
   openGraph: {
     title: "RiseUI | Risition",
     description:

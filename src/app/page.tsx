@@ -92,8 +92,8 @@ export default function Home() {
               Lame apps.. No more.
             </h1>
             <p className="max-w-xl text-lg text-zinc-300">
-              Risition is an indie app studio. We will make app store great
-              again.
+              Risition is an indie app studio. We make Align, a daily planner
+              and to-do list for iPhone and iPad.
             </p>
           </motion.div>
         </section>

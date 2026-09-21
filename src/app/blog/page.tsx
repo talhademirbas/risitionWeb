@@ -4,9 +4,10 @@ import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | Risition",
+  title: "Blog",
   description:
-    "Notes on mobile apps, UX craft, and where indie development is headed.",
+    "Notes on mobile apps, UX craft, and Align — our daily planner and to-do list.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogIndexPage() {

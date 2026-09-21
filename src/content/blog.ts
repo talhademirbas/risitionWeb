@@ -16,9 +16,50 @@ export type BlogPost = {
   paragraphs: string[];
   /** Optional grouped sections with headings — improves scanability. */
   subsections?: BlogSubsection[];
+  cta?: { href: string; label: string };
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "why-we-built-align-daily-planner",
+    title: "Why We Built Align as a Daily Planner, Not Another System",
+    excerpt:
+      "Align is a daily planner and to-do list for people who feel scattered — speak or type tasks, put them on a clock, and start today. Here’s the product call behind it.",
+    date: "2026-09-21",
+    category: "Product",
+    coverImage:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1600&q=85&auto=format&fit=crop",
+    coverAlt: "Notebook planner and to-do list on a desk",
+    paragraphs: [
+      "Most productivity apps try to become your operating system: projects, teams, calendars, habits, coaching. That is useful for some people. It is also why a lot of us open a to-do list, feel behind before we start, and close it again.",
+      "Align is the opposite bet. It is a daily planner and to-do list for iPhone and iPad — made by Risition — for getting today in order, not for modelling your whole life.",
+    ],
+    subsections: [
+      {
+        heading: "Plan the day, not the methodology",
+        paragraphs: [
+          "The job is simple: capture what you need to do, decide when it happens, and see a list you can finish. Speak a task or type it. Put it on a clock if it needs a time. Get a reminder. Check it off. That loop is the product.",
+          "If you want a full calendar, a work team workspace, or an app that coaches your routine, Align is not trying to be that. We would rather be the daily planner you actually open.",
+        ],
+      },
+      {
+        heading: "Capture has to be faster than the excuse",
+        paragraphs: [
+          "Scattered days usually fail at the front door. You remember something in the kitchen, or on a walk, and the app asks you to pick a project, a tag, and a nested due date. Align’s Quick Capture is built for that moment: say what you need to do, and when. You can type it too.",
+        ],
+      },
+      {
+        heading: "Where to go next",
+        paragraphs: [
+          "If that sounds like how you want to work, Align is on the App Store as Align: Daily Planner & To Do List. The product page on this site walks through timeboxing, reminders, progress, and the Home Screen widget — and who the app is not for.",
+        ],
+      },
+    ],
+    cta: {
+      href: "/align",
+      label: "See Align: Daily Planner & To Do List",
+    },
+  },
   {
     slug: "your-app-doesnt-feel-slow-it-feels-dishonest",
     title: "Your App Doesn't Feel Slow — It Feels Dishonest",

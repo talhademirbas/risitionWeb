@@ -13,10 +13,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: "Post | Risition" };
+  if (!post) return { title: "Post" };
   return {
-    title: `${post.title} | Risition`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -103,6 +104,17 @@ export default async function BlogPostPage({ params }: Props) {
             </section>
           ))}
         </div>
+
+        {post.cta && (
+          <p className="mt-12">
+            <Link
+              href={post.cta.href}
+              className="text-base font-medium text-purple-300 transition hover:text-purple-200"
+            >
+              {post.cta.label} →
+            </Link>
+          </p>
+        )}
 
         <p className="mt-16 border-t border-white/10 pt-8 text-sm text-zinc-600">
           <Link href="/blog" className="text-purple-400 hover:text-purple-300">

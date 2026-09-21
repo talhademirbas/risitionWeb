@@ -6,6 +6,7 @@ const CONTACT_EMAIL = "apphitectbusiness@gmail.com";
 export const metadata: Metadata = {
   title: "Align — Terms of Use",
   description: "Terms of Use for Align: Daily Planner & To Do List.",
+  alternates: { canonical: "/align/terms" },
 };
 
 export default function TermsPage() {
