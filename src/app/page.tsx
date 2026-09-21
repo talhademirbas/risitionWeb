@@ -63,7 +63,7 @@ export default function Home() {
           className="sticky top-4 z-20 mb-20 flex items-center justify-between rounded-2xl bg-black/40 px-4 py-3 backdrop-blur-xl"
         >
           <p className="text-lg font-semibold tracking-[0.2em] text-white">RISITION</p>
-          <nav className="hidden items-center gap-6 text-sm text-zinc-300 sm:flex">
+          <nav className="flex items-center gap-4 text-sm text-zinc-300 sm:gap-6">
             <a href="#apps" className="transition hover:text-purple-200">
               Apps
             </a>
@@ -109,36 +109,32 @@ export default function Home() {
           <h2 className="text-3xl font-semibold">Apps</h2>
           <Link
             href="/align"
-            className="group relative block cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-8 pt-16 shadow-[0_0_50px_rgba(168,85,247,0.14)] outline-none transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/45 hover:shadow-[0_0_60px_rgba(168,85,247,0.22)] focus-visible:ring-2 focus-visible:ring-purple-400/60 sm:pt-8 sm:pr-44"
+            className="group relative block cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-8 shadow-[0_0_50px_rgba(168,85,247,0.14)] outline-none transition duration-300 hover:-translate-y-0.5 hover:border-purple-400/45 hover:shadow-[0_0_60px_rgba(168,85,247,0.22)] focus-visible:ring-2 focus-visible:ring-purple-400/60 sm:pr-8"
           >
             <div className="pointer-events-none absolute -right-16 -top-12 h-44 w-44 rounded-full bg-purple-500/25 blur-3xl transition duration-500 group-hover:bg-purple-400/30" />
             <div className="pointer-events-none absolute -bottom-20 left-10 h-44 w-44 rounded-full bg-violet-500/15 blur-3xl transition duration-500 group-hover:bg-violet-400/20" />
-            <div className="absolute right-4 top-4 rounded-full border border-amber-400/35 bg-amber-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-amber-200">
-              Under construction
-            </div>
             <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
               <div className="flex shrink-0 justify-center sm:justify-start">
-                <div className="rounded-2xl bg-white p-4 shadow-[0_0_40px_rgba(168,85,247,0.2)] ring-1 ring-white/20 transition group-hover:ring-purple-400/30">
-                  <Image
-                    src="/align-icon.png"
-                    alt="Align: Daily Tasks app icon"
-                    width={104}
-                    height={104}
-                    className="h-[5.5rem] w-[5.5rem] object-contain sm:h-28 sm:w-28"
-                    priority
-                  />
-                </div>
+                <Image
+                  src="/align/appicon.png"
+                  alt="Align app icon"
+                  width={112}
+                  height={112}
+                  className="h-[5.5rem] w-[5.5rem] rounded-[1.65rem] object-cover shadow-[0_0_40px_rgba(168,85,247,0.2)] ring-1 ring-white/20 transition group-hover:ring-purple-400/30 sm:h-28 sm:w-28 sm:rounded-[1.85rem]"
+                  priority
+                />
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
-                  AI + Productivity App
+                  Daily Task Manager
                 </p>
                 <h3 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl md:text-4xl">
-                  Align: Daily Tasks
+                  Align: Daily Planner &amp; To Do List
                 </h3>
                 <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
-                  Everyday AI companion for planning, prioritizing, and finishing
-                  what matters.
+                  Planning your day should be simple, not overwhelming. Speak or
+                  type your tasks, put them on the clock, and get through your
+                  day.
                 </p>
               </div>
             </div>

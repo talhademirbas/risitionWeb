@@ -5,7 +5,7 @@ const CONTACT_EMAIL = "apphitectbusiness@gmail.com";
 
 export const metadata: Metadata = {
   title: "Align — Terms of Use",
-  description: "Terms of Use for the Align: Daily Tasks app.",
+  description: "Terms of Use for Align: Daily Planner & To Do List.",
 };
 
 export default function TermsPage() {
@@ -40,7 +40,7 @@ export default function TermsPage() {
               Welcome to Align! These terms govern your use of our app, website,
               and related services. By accessing or using{" "}
               <strong className="font-medium text-zinc-200">
-                Align: Daily Tasks
+                Align: Daily Planner &amp; To Do List
               </strong>{" "}
               (&quot;Align&quot; or &quot;the app&quot;), you agree to these Terms
               of Use. Please read them carefully.
@@ -317,7 +317,7 @@ export default function TermsPage() {
             <h2 className="text-base font-semibold text-white">Contact us</h2>
             <p>If you have questions about these terms, contact us at:</p>
             <p>
-              Risition — Align: Daily Tasks
+              Risition — Align: Daily Planner &amp; To Do List
               <br />
               Email:{" "}
               <a

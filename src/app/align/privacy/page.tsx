@@ -5,7 +5,7 @@ const CONTACT_EMAIL = "apphitectbusiness@gmail.com";
 
 export const metadata: Metadata = {
   title: "Align — Privacy Policy",
-  description: "Privacy Policy for the Align: Daily Tasks app.",
+  description: "Privacy Policy for Align: Daily Planner & To Do List.",
 };
 
 export default function PrivacyPage() {
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               Your privacy matters to us. At Risition (&quot;Risition,&quot;
               &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), we operate{" "}
               <strong className="font-medium text-zinc-200">
-                Align: Daily Tasks
+                Align: Daily Planner &amp; To Do List
               </strong>{" "}
               (&quot;Align&quot; or &quot;the app&quot;). We are committed to
               protecting your personal information and handling it responsibly.
@@ -361,7 +361,7 @@ export default function PrivacyPage() {
               personal data, contact us at:
             </p>
             <p>
-              Risition — Align: Daily Tasks
+              Risition — Align: Daily Planner &amp; To Do List
               <br />
               Email:{" "}
               <a

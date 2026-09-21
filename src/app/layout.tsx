@@ -13,30 +13,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://risition.vercel.app"),
-  title: "Risition | Ultra-Modern Tech App Platform",
+  metadataBase: new URL("https://www.risition.com"),
+  title: "Risition — Indie App Studio",
   description:
-    "Risition helps product teams build and scale intelligent app experiences with cinematic speed, precision, and enterprise-grade reliability.",
+    "Risition is an indie app studio. We make useful iPhone and iPad apps — starting with Align, a daily planner and to-do list.",
   keywords: [
     "Risition",
-    "tech app platform",
-    "product infrastructure",
-    "AI workflow",
-    "SaaS platform",
+    "indie app studio",
+    "Align",
+    "daily planner",
+    "to do list",
+    "iPhone apps",
   ],
   openGraph: {
-    title: "Risition | Ultra-Modern Tech App Platform",
+    title: "Risition — Indie App Studio",
     description:
-      "Design, deploy, and scale high-performance app experiences from one elegant command center.",
-    url: "https://risition.vercel.app",
+      "Indie apps for iPhone and iPad. Align helps you organise your day without the clutter.",
+    url: "https://www.risition.com",
     siteName: "Risition",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Risition | Ultra-Modern Tech App Platform",
+    card: "summary",
+    title: "Risition — Indie App Studio",
     description:
-      "The command center for intelligent products, modern infrastructure, and global scale.",
+      "Indie apps for iPhone and iPad. Align helps you organise your day without the clutter.",
   },
 };
 
