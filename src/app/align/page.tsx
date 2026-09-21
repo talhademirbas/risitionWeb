@@ -1,132 +1,222 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import "./landing.css";
+
+const STORE_URL =
+  "https://apps.apple.com/us/app/align-ai-planner-to-do-list/id6758886076";
 
 export const metadata: Metadata = {
-  title: "Align: Daily Tasks | Risition",
+  title: "Align: Daily Planner & To Do List",
   description:
-    "Organize, track, and complete your daily tasks effortlessly with Align. AI-powered smart features and a clean interface for smarter daily planning.",
+    "Planning your day should be simple, not overwhelming. Align helps you organise your tasks without the clutter.",
+  openGraph: {
+    title: "Align: Daily Planner & To Do List",
+    description:
+      "From overwhelmed to organised. Speak or type your tasks, put them on the clock, and get through your day.",
+    url: "/align",
+    siteName: "Risition",
+    type: "website",
+    images: [{ url: "/align/appicon.png" }],
+  },
 };
 
-const keyFeatures = [
-  {
-    title: "Smart Task Suggestions",
-    body: "AI automatically assigns emojis and estimated durations to your tasks.",
-  },
-  {
-    title: "Boost Productivity",
-    body: "Track your progress and stay motivated to get more done each day.",
-  },
-  {
-    title: "Simple, Elegant UX",
-    body: "A thoughtfully designed interface that makes daily planning effortless.",
-  },
-  {
-    title: "Innovative Daily Planning",
-    body:
-      "Align transforms how you organize your day, blending AI with practical productivity tools.",
-  },
-];
+function AppleMark() {
+  return (
+    <svg
+      width="12"
+      height="14"
+      viewBox="0 0 14 16"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M11.2 8.45c.02 2.25 1.97 3 1.99 3.01-.02.05-.31 1.07-1.03 2.12-.62.9-1.26 1.81-2.27 1.83-.99.02-1.31-.59-2.45-.59s-1.49.57-2.43.61c-.98.04-1.72-.98-2.34-1.88C1.4 11.7.42 8.33 1.73 6.06c.65-1.13 1.81-1.85 3.07-1.87.96-.02 1.86.65 2.45.65s1.68-.8 2.84-.68c.48.02 1.84.2 2.71 1.47-.07.04-1.62.95-1.6 2.82zM9.33 2.37C10.05 1.5 10.4.62 10.3 0c-.75.03-1.65.5-2.19 1.13-.48.56-.9 1.45-.79 2.3.83.06 1.68-.42 2.2-1.06z" />
+    </svg>
+  );
+}
+
+function StoreCta({ className }: { className?: string }) {
+  return (
+    <a className={className} href={STORE_URL}>
+      <AppleMark />
+      View on the App Store
+    </a>
+  );
+}
 
 export default function AlignPage() {
   return (
-    <main className="relative flex min-h-screen flex-col overflow-hidden bg-black text-white">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(167,139,250,0.18),transparent_40%),radial-gradient(circle_at_85%_30%,rgba(109,40,217,0.12),transparent_35%)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_30%)]" />
-
-      <div className="mx-auto w-full max-w-3xl flex-1 px-6 pb-16 pt-8 sm:px-10">
-        <header className="mb-14 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-sm text-zinc-500 transition hover:text-purple-200"
-          >
-            ← Risition
-          </Link>
-          <span className="rounded-full border border-amber-400/30 bg-amber-500/[0.08] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-amber-200/90">
-            Under construction
-          </span>
-        </header>
-
-        <div className="mt-2 flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-          <div className="flex shrink-0 justify-center sm:justify-start">
-            <div className="rounded-2xl bg-white p-5 shadow-[0_0_48px_rgba(168,85,247,0.22)] ring-1 ring-white/15">
-              <Image
-                src="/align-icon.png"
-                alt="Align: Daily Tasks app icon"
-                width={120}
-                height={120}
-                className="h-[7.5rem] w-[7.5rem] object-contain sm:h-32 sm:w-32"
-                priority
-              />
+    <main className="align-landing">
+      <div className="hero">
+        <div className="hero-inner">
+          <div className="hero-top">
+            <Image
+              src="/align/appicon.png"
+              alt="Align"
+              width={48}
+              height={48}
+              priority
+            />
+            <div>
+              <p className="name">Align: Daily Planner &amp; To Do List</p>
+              <p className="sub">Daily Task Manager</p>
             </div>
           </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-sm tracking-[0.28em] text-purple-300/90">
-              AI + Productivity App
+          <div className="hero-main">
+            <h1 className="hero-promise">From overwhelmed to organised.</h1>
+            <p className="hero-lede">
+              Planning your day should be simple, not overwhelming. Align helps
+              you organise your tasks without the clutter.
             </p>
-            <h1 className="mt-3 bg-gradient-to-r from-white via-white to-purple-200/90 bg-clip-text text-3xl font-semibold tracking-tight text-transparent balance sm:text-4xl md:text-5xl">
-              Align: Daily Tasks
-            </h1>
+            <StoreCta className="cta" />
           </div>
         </div>
+        <div className="hero-shots">
+          <p className="platforms">iPhone, iPad</p>
+          <div className="shots">
+            <img src="/align/ss-todo.png" alt="Daily Planning Made Easy" />
+            <img src="/align/ss-speak.png" alt="Speak to save your tasks" />
+            <img src="/align/ss-timebox.png" alt="Your day, on a clock" />
+            <img src="/align/ss-progress.png" alt="See yourself moving forward" />
+          </div>
+        </div>
+      </div>
 
-        <div className="mt-8 space-y-5 text-lg leading-relaxed text-zinc-300">
+      <div className="wrap">
+        <div className="store-copy">
           <p>
-            Organize, track, and complete your daily tasks effortlessly with
-            Align. Designed for individuals who want to boost productivity, Align
-            combines a clean, intuitive interface with AI-powered smart features
-            to make task management faster and more motivating.
+            Speak your tasks or type them. Put them on the clock, get reminders,
+            and work from a list you can actually finish.
+          </p>
+          <p>
+            For people who put things off, forget tasks, feel scattered, or just
+            want daily tasks to feel easier.
           </p>
         </div>
 
-        <section className="mt-12 rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent p-6 sm:p-8">
-          <h2 className="text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
-            Key Features
-          </h2>
-          <ul className="mt-6 space-y-6 text-zinc-300">
-            {keyFeatures.map((item) => (
-              <li key={item.title} className="border-l-2 border-purple-500/40 pl-4">
-                <p className="font-medium text-white">{item.title}</p>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-zinc-400">
-                  {item.body}
-                </p>
-              </li>
-            ))}
+        <section className="qc-section">
+          <div className="qc">
+            <div className="qc-copy">
+              <p className="qc-kicker">Quick Capture</p>
+              <h2>Speak to save your tasks.</h2>
+              <p>
+                Speak your tasks. Quick Capture saves what you need to do — and
+                when.
+              </p>
+              <p>
+                Say what is on your mind. Align turns it into tasks in seconds.
+                You can type them too, if you like.
+              </p>
+              <ol className="qc-steps">
+                <li>
+                  <span>1</span> Say what you need to do
+                </li>
+                <li>
+                  <span>2</span> Align writes what and when
+                </li>
+                <li>
+                  <span>3</span> Save it to your list
+                </li>
+              </ol>
+            </div>
+            <video
+              src="/align/preview.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/align/ss-speak.png"
+              aria-label="Quick Capture app preview"
+            />
+          </div>
+        </section>
+
+        <section>
+          <h2>What you can do</h2>
+          <ul className="features">
+            <li>
+              <strong>Quick Capture</strong> — speak what you need to do (and
+              when). Align turns it into tasks in seconds
+            </li>
+            <li>
+              <strong>Daily to-do</strong> — add, plan, repeat, and check off
+              tasks for today and later
+            </li>
+            <li>
+              <strong>Timebox</strong> — put tasks on a clock so each one has a
+              time
+            </li>
+            <li>
+              <strong>Reminders</strong> — we notify you when a task is due
+            </li>
+            <li>
+              <strong>AI assists</strong> — emoji and how long a task might take,
+              as you type
+            </li>
+            <li>
+              <strong>Progress</strong> — streaks and a week view of what you did
+            </li>
+            <li>
+              <strong>Home Screen widget</strong> — see today’s tasks without
+              opening the app
+            </li>
           </ul>
         </section>
 
-        <p className="mt-10 text-lg leading-relaxed text-zinc-400">
-          Join thousands of users who are completing more tasks, staying organized,
-          and achieving their goals with Align. Start today and experience smarter
-          daily planning!
-        </p>
-      </div>
-
-      <footer className="mt-auto border-t border-white/[0.06] bg-black/40 px-6 py-6 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-center text-sm text-zinc-600 sm:text-left">
-            © {new Date().getFullYear()} Risition
+        <section className="why">
+          <h2>Why we made Align</h2>
+          <p className="why-lead">Get your day together, without the hassle.</p>
+          <p>
+            Align helps you plan your day in seconds, so you know what to focus
+            on and what to do next.
           </p>
-          <nav
-            aria-label="Align app legal"
-            className="flex items-center justify-center gap-6 sm:justify-end"
-          >
-            <Link
-              href="/align/terms"
-              className="text-sm text-zinc-500 transition hover:text-purple-200"
-            >
-              Terms
-            </Link>
-            <span className="h-3 w-px bg-zinc-800" aria-hidden />
-            <Link
-              href="/align/privacy"
-              className="text-sm text-zinc-500 transition hover:text-purple-200"
-            >
-              Privacy
-            </Link>
-          </nav>
-        </div>
-      </footer>
+          <p>
+            No complicated productivity system. Just a simple way to turn
+            scattered tasks into a clear plan.
+          </p>
+        </section>
+
+        <section className="fit">
+          <h2>Is Align right for me?</h2>
+          <p>
+            Align is for people who put things off, forget tasks, feel scattered,
+            or just want daily tasks to feel easier. Either way, we help you
+            start today.
+          </p>
+          <div className="split">
+            <div className="card">
+              <h3>It’s for you if</h3>
+              <ul>
+                <li>You put things off or forget tasks</li>
+                <li>You feel scattered or overwhelmed</li>
+                <li>You want daily tasks to feel easier</li>
+                <li>You want to get organised and start today</li>
+              </ul>
+            </div>
+            <div className="card">
+              <h3>It isn’t if</h3>
+              <ul>
+                <li>You want a big productivity system</li>
+                <li>You need a full calendar or a work team app</li>
+                <li>You want an app that coaches your whole routine</li>
+                <li>You need family sharing or a web planner</li>
+              </ul>
+            </div>
+          </div>
+          <div className="close">
+            <StoreCta className="cta cta-dark" />
+          </div>
+        </section>
+
+        <footer className="page-foot">
+          <p>© Talha Demirbaş. Align: Daily Planner &amp; To Do List.</p>
+          <div className="links">
+            <a href={STORE_URL}>App Store</a>
+            <Link href="/align/privacy">Privacy Policy</Link>
+            <Link href="/align/terms">Terms</Link>
+          </div>
+        </footer>
+      </div>
     </main>
   );
 }
