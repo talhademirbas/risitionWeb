@@ -143,19 +143,6 @@
   padding-top: 16px;
 }
 
-.align-landing .store-copy {
-  max-width: 34em;
-  margin: 0 auto 8px;
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.45;
-}
-
-.align-landing .store-copy p {
-  margin: 0 0 14px;
-  color: var(--fg);
-}
-
 .align-landing .hero-shots {
   width: 100%;
   max-width: 1100px;
@@ -215,7 +202,8 @@
 
 .align-landing .qc-section {
   border-top: none;
-  padding-top: 72px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .align-landing .qc {
@@ -308,14 +296,6 @@
   max-width: 34em;
   margin: 0 0 14px;
   color: var(--fg);
-}
-
-.align-landing .why-lead {
-  font-size: clamp(22px, 3vw, 28px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-  margin-bottom: 16px !important;
 }
 
 .align-landing .fit > p {
@@ -474,7 +454,4 @@
     grid-template-columns: 1fr;
   }
 
-  .align-landing .store-copy {
-    font-size: 18px;
-  }
 }

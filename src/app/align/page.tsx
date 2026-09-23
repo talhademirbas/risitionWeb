@@ -220,14 +220,6 @@ export default function AlignPage() {
       </div>
 
       <div className="wrap">
-        <div className="store-copy">
-          <p>
-            Speak your tasks or type them. Put them on the clock, get reminders,
-            and get more done without the hassle.
-          </p>
-          <p>Get your day together. Plan it in seconds.</p>
-        </div>
-
         <section className="qc-section">
           <div className="qc">
             <div className="qc-copy">
@@ -299,7 +291,6 @@ export default function AlignPage() {
 
         <section className="why">
           <h2>Why we made Align</h2>
-          <p className="why-lead">Get your day together.</p>
           <p>
             Align helps you plan your day in seconds, so you know what to focus
             on and what to do next.
