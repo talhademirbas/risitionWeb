@@ -353,7 +353,6 @@ export default function AlignPage() {
             <a href={ALIGN_STORE_URL}>App Store</a>
             <Link href="/align/privacy">Privacy Policy</Link>
             <Link href="/align/terms">Terms</Link>
-            <Link href="/blog">Blog</Link>
           </div>
         </footer>
       </div>
