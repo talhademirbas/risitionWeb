@@ -22,6 +22,12 @@
   box-sizing: border-box;
 }
 
+.align-landing::selection,
+.align-landing *::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--fg);
+}
+
 .align-landing a {
   color: inherit;
 }
