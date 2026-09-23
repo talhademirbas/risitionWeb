@@ -51,13 +51,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Where to go next",
         paragraphs: [
-          "If that sounds like how you want to work, Align is on the App Store as Align: Daily Planner & To Do List. The product page on this site walks through timeboxing, reminders, progress, and the Home Screen widget — and who the app is not for.",
+          "If that sounds like how you want to work, Align is on the App Store as Align: Daily Task Planner. The product page on this site walks through timeboxing, reminders, progress, and the Home Screen widget — and who the app is not for.",
         ],
       },
     ],
     cta: {
       href: "/align",
-      label: "See Align: Daily Planner & To Do List",
+      label: "See Align: Daily Task Planner",
     },
   },
   {

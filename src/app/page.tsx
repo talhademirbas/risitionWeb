@@ -126,15 +126,15 @@ export default function Home() {
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-sm uppercase tracking-[0.2em] text-purple-300 transition group-hover:text-purple-200">
-                  Daily Task Manager
+                  Daily Task Planner
                 </p>
                 <h3 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl md:text-4xl">
-                  Align: Daily Planner &amp; To Do List
+                  Align: Daily Task Planner
                 </h3>
                 <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
                   Planning your day should be simple, not overwhelming. Speak or
-                  type your tasks, put them on the clock, and get through your
-                  day.
+                  type your todos, put them on the clock, and get more done
+                  without the hassle.
                 </p>
               </div>
             </div>

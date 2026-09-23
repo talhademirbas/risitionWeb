@@ -16,32 +16,31 @@ const faqs = [
   {
     question: "What is Align?",
     answer:
-      "Align is a daily planner and to-do list by Risition. You speak or type what you need to do, put tasks on a clock, and work from a list you can actually finish.",
+      "Align is a daily task planner for iPhone and iPad. You speak or type what you need to do, put tasks on a clock, and work from a list you can finish.",
   },
   {
     question: "Is Align a daily planner or a to-do list?",
     answer:
-      "Both. Align is a daily planner with a to-do list at the centre: plan today, timebox tasks, get reminders, and check them off as you go.",
+      "Both. Align is a daily task planner with a to-do list at the centre: plan today, put tasks on a clock, get reminders, and check them off.",
   },
   {
     question: "Who is Align for?",
     answer:
-      "People who put things off, forget tasks, feel scattered, or just want daily tasks to feel easier. It is not a full calendar, team app, or heavy productivity system.",
+      "Anyone who wants today out of their head and onto a list. It is not a full calendar, team app, or heavy productivity system.",
   },
   {
-    question: "Where can I get the Align daily planner?",
+    question: "Where can I get Align?",
     answer:
-      "Align is on the App Store for iPhone and iPad. Download Align: Daily Planner & To Do List, made by Risition.",
+      "Align is on the App Store for iPhone and iPad. Download Align: Daily Task Planner, made by Risition.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Align: Daily Planner & To Do List",
+  title: ALIGN_NAME,
   description: ALIGN_DESCRIPTION,
   keywords: [
-    "Align daily planner",
-    "Align to do list",
-    "daily planner iPhone",
+    "Align daily task planner",
+    "daily task planner iPhone",
     "to do list iPad",
     "Risition",
     "timebox tasks",
@@ -192,16 +191,16 @@ export default function AlignPage() {
               priority
             />
             <div>
-              <h1 className="name">{ALIGN_NAME}</h1>
-              <p className="sub">Daily planner by Risition</p>
+              <p className="name">{ALIGN_NAME}</p>
+              <p className="sub">Daily task planner by Risition</p>
             </div>
           </div>
           <div className="hero-main">
-            <p className="hero-promise">From overwhelmed to organised.</p>
+            <h1 className="hero-promise">Your daily task planner.</h1>
             <p className="hero-lede">
-              Align is a daily planner and to-do list for iPhone and iPad.
               Planning your day should be simple, not overwhelming. Speak or
-              type your tasks, put them on the clock, and get through your day.
+              type your todos, put them on the clock, and get more done without
+              the hassle.
             </p>
             <StoreCta className="cta" />
           </div>
@@ -209,12 +208,12 @@ export default function AlignPage() {
         <div className="hero-shots">
           <p className="platforms">iPhone, iPad</p>
           <div className="shots">
-            <img src="/align/ss-todo.png" alt="Align daily planner to-do list" />
-            <img src="/align/ss-speak.png" alt="Speak to save tasks in Align" />
-            <img src="/align/ss-timebox.png" alt="Timebox your day on a clock" />
+            <img src="/align/ss-todo.png" alt="Your daily task planner" />
+            <img src="/align/ss-speak.png" alt="Speak. Brain dump your tasks." />
+            <img src="/align/ss-timebox.png" alt="Your day, on a clock" />
             <img
               src="/align/ss-progress.png"
-              alt="Align weekly progress and streaks"
+              alt="Your week at a glance"
             />
           </div>
         </div>
@@ -224,26 +223,19 @@ export default function AlignPage() {
         <div className="store-copy">
           <p>
             Speak your tasks or type them. Put them on the clock, get reminders,
-            and work from a list you can actually finish.
+            and get more done without the hassle.
           </p>
-          <p>
-            For people who put things off, forget tasks, feel scattered, or just
-            want daily tasks to feel easier.
-          </p>
+          <p>Get your day together. Plan it in seconds.</p>
         </div>
 
         <section className="qc-section">
           <div className="qc">
             <div className="qc-copy">
               <p className="qc-kicker">Quick Capture</p>
-              <h2>Speak to save your tasks.</h2>
+              <h2>Speak. Brain dump your tasks.</h2>
               <p>
-                Speak your tasks. Quick Capture saves what you need to do — and
-                when.
-              </p>
-              <p>
-                Say what is on your mind. Align turns it into tasks in seconds.
-                You can type them too, if you like.
+                Speak what you need to do — and when. Quick Capture turns it
+                into tasks you can save in seconds. You can type them too.
               </p>
               <ol className="qc-steps">
                 <li>
@@ -270,7 +262,7 @@ export default function AlignPage() {
         </section>
 
         <section>
-          <h2>What you can do in this daily planner</h2>
+          <h2>What you can do</h2>
           <ul className="features">
             <li>
               <strong>Quick Capture</strong> — speak what you need to do (and
@@ -292,43 +284,46 @@ export default function AlignPage() {
               as you type
             </li>
             <li>
+              <strong>Small wins</strong> — start with a suggested task to get
+              moving
+            </li>
+            <li>
               <strong>Progress</strong> — streaks and a week view of what you did
             </li>
             <li>
-              <strong>Home Screen widget</strong> — see today’s tasks without
-              opening the app
+              <strong>Home Screen widget</strong> — today’s list, without opening
+              the app
             </li>
           </ul>
         </section>
 
         <section className="why">
           <h2>Why we made Align</h2>
-          <p className="why-lead">Get your day together, without the hassle.</p>
+          <p className="why-lead">Get your day together.</p>
           <p>
             Align helps you plan your day in seconds, so you know what to focus
             on and what to do next.
           </p>
           <p>
-            No complicated productivity system. Just a simple daily planner that
-            turns scattered tasks into a clear plan.
+            No complicated productivity system. Speak or type, put it on the
+            clock, see the week.
           </p>
         </section>
 
         <section className="fit">
           <h2>Is Align right for me?</h2>
           <p>
-            Align is for people who put things off, forget tasks, feel scattered,
-            or just want daily tasks to feel easier. Either way, we help you
-            start today.
+            Align is for anyone who wants a daily task planner: dump today out
+            of your head, put it on a clock, and see the week.
           </p>
           <div className="split">
             <div className="card">
               <h3>It’s for you if</h3>
               <ul>
-                <li>You put things off or forget tasks</li>
-                <li>You feel scattered or overwhelmed</li>
-                <li>You want daily tasks to feel easier</li>
-                <li>You want to get organised and start today</li>
+                <li>You want a simple daily task planner</li>
+                <li>You like speaking or typing a brain dump</li>
+                <li>You want tasks on a clock, not a big system</li>
+                <li>You want today and the week at a glance</li>
               </ul>
             </div>
             <div className="card">
