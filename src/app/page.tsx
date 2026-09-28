@@ -132,9 +132,8 @@ export default function Home() {
                   Align: Daily Task Planner
                 </h3>
                 <p className="mt-4 max-w-2xl text-zinc-300 transition group-hover:text-zinc-200">
-                  Planning your day should be simple, not overwhelming. Speak or
-                  type your todos, put them on the clock, and get more done
-                  without the hassle.
+                  Speak or type. Plan it in seconds. Get today out of your head
+                  and onto a list.
                 </p>
               </div>
             </div>

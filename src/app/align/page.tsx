@@ -7,6 +7,7 @@ import {
   ALIGN_NAME,
   ALIGN_PATH,
   ALIGN_STORE_URL,
+  ALIGN_SUBTITLE,
   ALIGN_URL,
   SITE_URL,
 } from "@/lib/site";
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/align/appicon.png",
-        alt: "Align daily planner app icon",
+        alt: "Align: Daily Task Planner app icon",
         width: 1024,
         height: 1024,
       },
@@ -91,6 +92,7 @@ const jsonLd = {
         `${SITE_URL}/align/ss-todo.png`,
         `${SITE_URL}/align/ss-speak.png`,
         `${SITE_URL}/align/ss-timebox.png`,
+        `${SITE_URL}/align/ss-home.png`,
         `${SITE_URL}/align/ss-progress.png`,
       ],
       description: ALIGN_DESCRIPTION,
@@ -185,22 +187,21 @@ export default function AlignPage() {
           <div className="hero-top">
             <Image
               src="/align/appicon.png"
-              alt="Align daily planner app icon"
+              alt="Align: Daily Task Planner app icon"
               width={48}
               height={48}
               priority
             />
             <div>
               <p className="name">{ALIGN_NAME}</p>
-              <p className="sub">Daily task planner by Risition</p>
+              <p className="sub">{ALIGN_SUBTITLE}</p>
             </div>
           </div>
           <div className="hero-main">
-            <h1 className="hero-promise">Your daily task planner.</h1>
+            <h1 className="hero-promise">Your daily task planner</h1>
             <p className="hero-lede">
-              Planning your day should be simple, not overwhelming. Speak or
-              type your todos, put them on the clock, and get more done without
-              the hassle.
+              Speak or type. Plan it in seconds. Get today out of your head and
+              onto a list.
             </p>
             <StoreCta className="cta" />
           </div>
@@ -211,6 +212,10 @@ export default function AlignPage() {
             <img src="/align/ss-todo.png" alt="Your daily task planner" />
             <img src="/align/ss-speak.png" alt="Speak. Brain dump your tasks." />
             <img src="/align/ss-timebox.png" alt="Your day, on a clock" />
+            <img
+              src="/align/ss-home.png"
+              alt="Get reminders. Home Screen widget"
+            />
             <img
               src="/align/ss-progress.png"
               alt="Your week at a glance"
@@ -292,12 +297,12 @@ export default function AlignPage() {
         <section className="why">
           <h2>Why we made Align</h2>
           <p>
-            Align helps you plan your day in seconds, so you know what to focus
-            on and what to do next.
+            Align helps you plan your day in seconds. Speak or type, put it on
+            the clock, see the week.
           </p>
           <p>
-            No complicated productivity system. Speak or type, put it on the
-            clock, see the week.
+            No complicated productivity system. Get today out of your head and
+            onto a list.
           </p>
         </section>
 
