@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Capture has to be faster than the excuse",
         paragraphs: [
-          "Scattered days usually fail at the front door. You remember something in the kitchen, or on a walk, and the app asks you to pick a project, a tag, and a nested due date. Align’s Quick Capture is built for that moment: say what you need to do, and when. You can type it too.",
+          "Scattered days usually fail at the front door. You remember something in the kitchen, or on a walk, and the app asks you to pick a project, a tag, and a nested due date. Align’s Voice Capture is built for that moment: say what’s in your head, and Align files each thought as a task. You can type it too.",
         ],
       },
       {

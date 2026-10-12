@@ -17,12 +17,12 @@ const faqs = [
   {
     question: "What is Align?",
     answer:
-      "Align is a daily task planner for iPhone and iPad. You speak or type what you need to do, put tasks on a clock, and work from a list you can finish.",
+      "Align is a daily planner for iPhone and iPad. You speak or type what’s on your mind, and it turns those thoughts into a clear plan you can run.",
   },
   {
     question: "Is Align a daily planner or a to-do list?",
     answer:
-      "Both. Align is a daily task planner with a to-do list at the centre: plan today, put tasks on a clock, get reminders, and check them off.",
+      "Both. Align is a daily planner with a to-do list at the centre: plan today, place tasks on the clock, get reminders, and complete them.",
   },
   {
     question: "Who is Align for?",
@@ -198,10 +198,10 @@ export default function AlignPage() {
             </div>
           </div>
           <div className="hero-main">
-            <h1 className="hero-promise">Your daily task planner</h1>
+            <h1 className="hero-promise">Your simple day planner</h1>
             <p className="hero-lede">
-              Speak or type. Plan it in seconds. Get today out of your head and
-              onto a list.
+              Speak or type what’s on your mind. Turn it into a clear plan in
+              seconds.
             </p>
             <StoreCta className="cta" />
           </div>
@@ -209,7 +209,7 @@ export default function AlignPage() {
         <div className="hero-shots">
           <p className="platforms">iPhone, iPad</p>
           <div className="shots">
-            <img src="/align/ss-todo.png" alt="Your daily task planner" />
+            <img src="/align/ss-todo.png" alt="Your simple day planner" />
             <img src="/align/ss-speak.png" alt="Speak. Brain dump your tasks." />
             <img src="/align/ss-timebox.png" alt="Your day, on a clock" />
             <img
@@ -228,11 +228,11 @@ export default function AlignPage() {
         <section className="qc-section">
           <div className="qc">
             <div className="qc-copy">
-              <p className="qc-kicker">Quick Capture</p>
+              <p className="qc-kicker">Voice Capture</p>
               <h2>Speak. Brain dump your tasks.</h2>
               <p>
-                Speak what you need to do — and when. Quick Capture turns it
-                into tasks you can save in seconds. You can type them too.
+                Speak what’s in your head. Align files each thought as a task
+                you can save in seconds. You can type them too.
               </p>
               <ol className="qc-steps">
                 <li>
@@ -253,7 +253,7 @@ export default function AlignPage() {
               loop
               playsInline
               poster="/align/ss-speak.png"
-              aria-label="Quick Capture app preview"
+              aria-label="Voice Capture app preview"
             />
           </div>
         </section>
@@ -262,34 +262,35 @@ export default function AlignPage() {
           <h2>What you can do</h2>
           <ul className="features">
             <li>
-              <strong>Quick Capture</strong> — speak what you need to do (and
-              when). Align turns it into tasks in seconds
+              <strong>Voice Capture</strong> — speak what’s in your head. Align
+              files each thought as a task
             </li>
             <li>
-              <strong>Daily to-do</strong> — add, plan, repeat, and check off
-              tasks for today and later
+              <strong>Daily to-do</strong> — add, schedule, repeat, and complete
+              tasks for today and upcoming days
             </li>
             <li>
-              <strong>Timebox</strong> — put tasks on a clock so each one has a
-              time
+              <strong>Timebox</strong> — place tasks on the clock so each one
+              has a time
             </li>
             <li>
-              <strong>Reminders</strong> — we notify you when a task is due
+              <strong>Reminders</strong> — get a notification when a scheduled
+              task is due
             </li>
             <li>
-              <strong>AI assists</strong> — emoji and how long a task might take,
-              as you type
+              <strong>Home Screen widget</strong> — see today’s tasks at a
+              glance, without opening the app
+            </li>
+            <li>
+              <strong>Progress</strong> — streaks and a week view of what you
+              actually did
             </li>
             <li>
               <strong>Small wins</strong> — start with a suggested task to get
               moving
             </li>
             <li>
-              <strong>Progress</strong> — streaks and a week view of what you did
-            </li>
-            <li>
-              <strong>Home Screen widget</strong> — today’s list, without opening
-              the app
+              <strong>Emoji and duration</strong> — added as you capture
             </li>
           </ul>
         </section>
@@ -297,12 +298,12 @@ export default function AlignPage() {
         <section className="why">
           <h2>Why we made Align</h2>
           <p>
-            Align helps you plan your day in seconds. Speak or type, put it on
-            the clock, see the week.
+            Your day shouldn’t take forever to plan. Speak or type what’s on
+            your mind, and turn it into a clear plan in seconds.
           </p>
           <p>
-            No complicated productivity system. Get today out of your head and
-            onto a list.
+            Easy to plan. Easy to run. Get today out of your head and onto a
+            list.
           </p>
         </section>
 
@@ -317,7 +318,7 @@ export default function AlignPage() {
               <h3>It’s for you if</h3>
               <ul>
                 <li>You want a simple daily task planner</li>
-                <li>You like speaking or typing a brain dump</li>
+                <li>You like speaking or typing what’s in your head</li>
                 <li>You want tasks on a clock, not a big system</li>
                 <li>You want today and the week at a glance</li>
               </ul>
